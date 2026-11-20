@@ -1,3 +1,4 @@
+package Backend;
 public class Teacher {
     // Private attributes
     private int id;
