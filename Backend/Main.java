@@ -16,5 +16,16 @@ public class Main {
         t1.display();
         System.out.println("-------------------");
         t2.display();
+
+
+        Student s1 = new Student(1, "Daniyal", new String[]{"Male"}, "06-November-2007", "15-august-2025");
+  s1.displayStudent();
+
+  System.out.print("");
+  System.out.println("==================================================================================================");
+  System.out.print("");
+
+  Student s2 = new Student(2, "Aisha", new String[]{"Female"}, "15-October-2005", "15-may-2023");
+  s2.displayStudent();
     }
 }
