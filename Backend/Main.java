@@ -72,6 +72,34 @@ public class Main {
         //         "15-October-2005", "15-may-2023");
 
         // s2.displayStudent();
+        //teacher testing
+        // TeacherDao dao = new TeacherDao();
+
+        // // 1. Teacher register karo
+        // dao.registerTeacher("Ali Khan", "03001234567", "ali@ahss.com", "1234");
+
+        // // 2. Sab teachers dekho
+        // List<Teacher> list = dao.getAllTeachers();
+        // for (Teacher t : list) {
+        //     t.display();
+        //     System.out.println("-------------------");
+        // }
+
+        // // 3. Ek teacher id se dekho (id 1 maan lo)
+        // Teacher t1 = dao.getTeacherById(1);
+        // if (t1 != null) {
+        //     t1.display();
+        // }
+
+        // // 4. Assigned classes dekho
+        // List<String> classes = dao.getAssignedClasses(1);
+        // for (String c : classes) {
+        //     System.out.println(c);
+        // }
+
+        // // 5. Teacher remove karo (status LEFT)
+        // dao.removeTeacher(1);
+        // dao.getTeacherById(1).display(); 
 
         // Database Connection Testing
         Connection con = DataBaseConnection.getConnection();
