@@ -6,24 +6,41 @@ public class Main {
 
     public static void main(String[] args) {
         // UserDAO
-            UserDAO userDAO = new UserDAO();
-
-            User user = userDAO.login(
-                "rayyan@test.com",
-             "Test123"
+           UserDAO userDAO = new UserDAO();
+           User user = userDAO.login(
+               "rayyan@test.com",
+               "Test123"
                                     );
 
-    if (user != null) {
+        if (user != null) {
 
-    System.out.println("Login Successful!");
-    System.out.println("User ID: " + user.getUserId());
-    System.out.println("Email: " + user.getEmail());
-    System.out.println("Role: " + user.getUserRole());
+            System.out.println("Login Successful!");
 
-                } 
-        else  {
+            if (user.getUserRole().equals("ADMIN")) {
+
+            AdminDao adminDAO = new AdminDao();
+
+            Admin admin = adminDAO.getAdminByUserId(user.getUserId());
+
+            if (admin != null) {
+
+                    System.out.println("\n===== ADMIN DASHBOARD =====");
+                    System.out.println("Admin ID: " + admin.getAdminId());
+                    System.out.println("Admin Name: " + admin.getFullName());
+                    System.out.println("User ID: " + admin.getUserId());
+
+                                } 
+            else {
+                System.out.println("Admin Details Not Found!");
+                }
+
+    } else {
+        System.out.println("This account is not an Admin!");
+    }
+
+} else {
     System.out.println("Invalid Email or Password!");
-        }
+}
 
 
         // // Admin Testing
@@ -52,13 +69,6 @@ public class Main {
         //     System.out.println("Admin Registration Test Failed!");
         //     }
 
-        // // Teacher Testing
-        // Teacher t1 = new Teacher(1, "LEO", "03001234567", new String[]{"Active"});
-        // Teacher t2 = new Teacher(2, "MUDA", "03111234567", new String[]{"Not Active"});
-
-        // t1.display();
-        // System.out.println("-------------------");
-        // t2.display();
 
         // // Student Testing
         // Student s1 = new Student(1, "Daniyal", new String[]{"Male"},

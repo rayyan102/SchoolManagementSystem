@@ -73,4 +73,44 @@ public boolean registerAdmin(String fullName, String email, String password) {
     }
 }
 
+
+    public Admin getAdminByUserId(int userId) {
+
+    String sql = "SELECT * FROM admin WHERE user_id = ?";
+
+    try (Connection con = DataBaseConnection.getConnection()) {
+
+        if (con == null) {
+            return null;
+        }
+
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setInt(1, userId);
+
+            try (ResultSet rs = ps.executeQuery()) {
+
+                if (rs.next()) {
+
+                    int adminId = rs.getInt("ADMIN_ID");
+                    String fullName = rs.getString("FULL_NAME");
+                    int databaseUserId = rs.getInt("USER_ID");
+
+                    return new Admin(
+                        adminId,
+                        fullName,
+                        databaseUserId
+                    );
+                }
+            }
+        }
+
+    } catch (SQLException e) {
+
+        System.out.println("Admin Details Fetch Failed!");
+        System.out.println(e.getMessage());
+    }
+
+    return null;
+}
 }
