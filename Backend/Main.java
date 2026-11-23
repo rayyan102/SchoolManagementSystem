@@ -5,12 +5,14 @@ import java.sql.Connection;
 public class Main {
 
     public static void main(String[] args) {
-        // UserDAO
-           UserDAO userDAO = new UserDAO();
-           User user = userDAO.login(
-               "rayyan@test.com",
-               "Test123"
-                                    );
+
+        // Admin Login Testing
+        UserDAO userDAO = new UserDAO();
+
+        User user = userDAO.login(
+            "rayyan@test.com",
+            "Test123"
+        );
 
         if (user != null) {
 
@@ -18,116 +20,63 @@ public class Main {
 
             if (user.getUserRole().equals("ADMIN")) {
 
-            AdminDao adminDAO = new AdminDao();
+                AdminDao adminDAO = new AdminDao();
 
-            Admin admin = adminDAO.getAdminByUserId(user.getUserId());
+                Admin admin = adminDAO.getAdminByUserId(user.getUserId());
 
-            if (admin != null) {
+                if (admin != null) {
 
                     System.out.println("\n===== ADMIN DASHBOARD =====");
                     System.out.println("Admin ID: " + admin.getAdminId());
                     System.out.println("Admin Name: " + admin.getFullName());
                     System.out.println("User ID: " + admin.getUserId());
 
-                                } 
-            else {
-                System.out.println("Admin Details Not Found!");
+                } else {
+                    System.out.println("Admin Details Not Found!");
                 }
 
-    } else {
-        System.out.println("This account is not an Admin!");
-    }
+            } else {
+                System.out.println("This account is not an Admin!");
+            }
 
-} else {
-    System.out.println("Invalid Email or Password!");
-<<<<<<< HEAD
-}
-=======
+        } else {
+            System.out.println("Invalid Email or Password!");
         }
-// // Teacherdao Testing
-         TeacherDao teacherDao = new TeacherDao();
-         boolean result = teacherDao.registerTeacher(
-                    "Daniyal",
-                    "03001234567",
-                    "daniyal@test.com",
-                    "Test123"
-                                                    );
->>>>>>> 08a9afdd22ceeea80c8ef5c0f7861b60b3bd5eca
 
-        if (result) {
-                System.out.println("Teacher Data Saved Successfully!");
-                    } 
-        else {
-                System.out.println("Teacher Registration Failed!");
-                    }
 
-        // // Admin Testing
-        // Admin admin1 = new Admin(1, "Rayyan", 101);
-        // admin1.displayAdmin();
+        // // Teacher DAO Testing
+        // TeacherDao teacherDao = new TeacherDao();
 
-        // admin1.setFullName("Daniyal");
-
-        // System.out.println("\nAfter Updating Name:");
-        // admin1.displayAdmin();
-
-        // // Admin Registration Testing
-
-        // AdminDao adminDAO = new AdminDao();
-
-        // boolean result = adminDAO.registerAdmin(
-        //             "Rayyan",
-        //             "rayyan@test.com",
-        //             "Test123"
-        //                                     );
+        // boolean result = teacherDao.registerTeacher(
+        //     "Mudassir",
+        //     "0300129874",
+        //     "Mudassir@test.com",
+        //     "Test321"
+        // );
 
         // if (result) {
-        //     System.out.println("Admin Registration Test Successful!");
-        //             } 
-        // else {
-        //     System.out.println("Admin Registration Test Failed!");
-        //     }
-
-
-        // // Student Testing
-        // Student s1 = new Student(1, "Daniyal", new String[]{"Male"},
-        //         "06-November-2007", "15-august-2025");
-
-        // s1.displayStudent();
-
-        // System.out.println("==================================================");
-
-        // Student s2 = new Student(2, "Aisha", new String[]{"Female"},
-        //         "15-October-2005", "15-may-2023");
-
-        // s2.displayStudent();
-        //teacher testing
-        // TeacherDao dao = new TeacherDao();
-
-        // // 1. Teacher register karo
-        // dao.registerTeacher("Ali Khan", "03001234567", "ali@ahss.com", "1234");
-
-        // // 2. Sab teachers dekho
-        // List<Teacher> list = dao.getAllTeachers();
-        // for (Teacher t : list) {
-        //     t.display();
-        //     System.out.println("-------------------");
+        //     System.out.println("Teacher Data Saved Successfully!");
+        // } else {
+        //     System.out.println("Teacher Registration Failed!");
         // }
 
-        // // 3. Ek teacher id se dekho (id 1 maan lo)
-        // Teacher t1 = dao.getTeacherById(1);
-        // if (t1 != null) {
-        //     t1.display();
-        // }
+        // Student TESTING
+        StudentDAO studentDAO = new StudentDAO();
+        boolean studentResult  = studentDAO.registerStudent(
+        "Bilal",
+        "Male",
+        "2010-05-16",
+        21,
+        "Bilal@test.com",
+        "Test4556"
+                                                            );
 
-        // // 4. Assigned classes dekho
-        // List<String> classes = dao.getAssignedClasses(1);
-        // for (String c : classes) {
-        //     System.out.println(c);
-        // }
-
-        // // 5. Teacher remove karo (status LEFT)
-        // dao.removeTeacher(1);
-        // dao.getTeacherById(1).display(); 
+        if (studentResult ) {
+            System.out.println("Student Data Saved Successfully!");
+                            } 
+        else {
+            System.out.println("Student Registration Failed!");
+            }
 
         // Database Connection Testing
         Connection con = DataBaseConnection.getConnection();
