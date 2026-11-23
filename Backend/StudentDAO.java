@@ -15,8 +15,13 @@ public class StudentDAO {
         if ("M".equalsIgnoreCase(dbGender)) {
             return new String[]{"Male"};
         }
+        else if ("F".equalsIgnoreCase(dbGender)) {
+            return new String[]{"Female"};
+        }
+        else {
+            System.out.print("Invalid gender");
+        }
 
-        return new String[]{"Female"};
     }
 
     // creating student object from row 
@@ -217,3 +222,4 @@ public class StudentDAO {
         return list;
     }
 }
+
