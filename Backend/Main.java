@@ -40,8 +40,26 @@ public class Main {
 
 } else {
     System.out.println("Invalid Email or Password!");
+<<<<<<< HEAD
 }
+=======
+        }
+// // Teacherdao Testing
+         TeacherDao teacherDao = new TeacherDao();
+         boolean result = teacherDao.registerTeacher(
+                    "Daniyal",
+                    "03001234567",
+                    "daniyal@test.com",
+                    "Test123"
+                                                    );
+>>>>>>> 08a9afdd22ceeea80c8ef5c0f7861b60b3bd5eca
 
+        if (result) {
+                System.out.println("Teacher Data Saved Successfully!");
+                    } 
+        else {
+                System.out.println("Teacher Registration Failed!");
+                    }
 
         // // Admin Testing
         // Admin admin1 = new Admin(1, "Rayyan", 101);
