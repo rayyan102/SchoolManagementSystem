@@ -43,6 +43,99 @@ public class Main {
             System.out.println("Invalid Email or Password!");
         }
 
+// teacherdao all methods testing:
+        // TeacherDao dao = new TeacherDao();
+
+
+        // // Har baar naya email, taake "unique" wali error na aaye
+        // String email = "teacher" + System.currentTimeMillis() + "@test.com";
+
+        // // 1. registerTeacher
+        // System.out.println("===== 1. registerTeacher =====");
+        // boolean result = dao.registerTeacher("Daniyal", "03001234567", email, "Test123");
+
+        // if (result) {
+        //     System.out.println("Teacher Data Saved Successfully!");
+        // } else {
+        //     System.out.println("Teacher Registration Failed!");
+        //     return;   // register nahi hua to aage test nahi chalega
+        // }
+
+        // // 2. getAllTeachers
+        // System.out.println("\n===== 2. getAllTeachers =====");
+        // List<Teacher> list = dao.getAllTeachers();
+
+        // if (list.isEmpty()) {
+        //     System.out.println("Koi teacher nahi mila");
+        //     return;
+        // }
+
+        // for (Teacher t : list) {
+        //     t.display();
+        //     System.out.println("-------------------");
+        // }
+
+        // // Ab jo naya teacher bana (list ka aakhri), uski id le lo
+        // int teacherId = list.get(list.size() - 1).getId();
+        // System.out.println("Test ke liye teacher id: " + teacherId);
+
+        // // 3. getTeacherById
+        // System.out.println("\n===== 3. getTeacherById =====");
+        // Teacher t1 = dao.getTeacherById(teacherId);
+
+        // if (t1 != null) {
+        //     t1.display();
+        // } else {
+        //     System.out.println("Teacher nahi mila");
+        // }
+
+        // // 3b. getTeacherById (galat id, null aana chahiye)
+        // Teacher notFound = dao.getTeacherById(99999);
+        // if (notFound == null) {
+        //     System.out.println("Galat id par null aaya (sahi hai)");
+        // }
+
+        // // 4. getTeacherByUserId
+        // // Yahan user_id apne database se dekh kar likho (users table mein is teacher ki user_id)
+        // System.out.println("\n===== 4. getTeacherByUserId =====");
+        // int userId = 1;   // <-- apni asli user_id likho
+        // Teacher t2 = dao.getTeacherByUserId(userId);
+
+        // if (t2 != null) {
+        //     t2.display();
+        // } else {
+        //     System.out.println("Is user_id ka teacher nahi mila");
+        // }
+
+        // // 5. getAssignedClasses
+        // System.out.println("\n===== 5. getAssignedClasses =====");
+        // List<String> classes = dao.getAssignedClasses(teacherId);
+
+        // if (classes.isEmpty()) {
+        //     System.out.println("Is teacher ko abhi koi class assign nahi hui");
+        // } else {
+        //     for (String c : classes) {
+        //         System.out.println(c);
+        //     }
+        // }
+
+        // // 6. removeTeacher
+        // System.out.println("\n===== 6. removeTeacher =====");
+        // boolean removed = dao.removeTeacher(teacherId);
+
+        // if (removed) {
+        //     System.out.println("Teacher remove hua (status LEFT)");
+        // } else {
+        //     System.out.println("Teacher remove nahi hua");
+        // }
+
+        // // Dobara dekho, ab status "Not Active" aana chahiye
+        // Teacher after = dao.getTeacherById(teacherId);
+        // if (after != null) {
+        //     after.display();
+
+
+        
 
         // // Teacher DAO Testing
         // TeacherDao teacherDao = new TeacherDao();
