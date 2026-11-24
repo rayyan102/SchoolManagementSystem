@@ -20,7 +20,9 @@ public class StudentDAO {
         }
         else {
             System.out.print("Invalid gender");
+            return new String[]{"Unknown"};
         }
+        
 
     }
 
