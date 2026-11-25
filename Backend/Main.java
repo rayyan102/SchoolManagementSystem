@@ -184,5 +184,77 @@ public class Main {
                 System.out.println(e.getMessage());
             }
         }
+
+        // =====testing student dao=====
+
+        StudentDAO st = new StudentDAO();
+
+        // Har baar unique email generate hoga
+        String email = "student" + System.currentTimeMillis() + "@test.com";
+
+        // 1. registerStudent
+        System.out.println("===== 1. registerStudent =====");
+
+        boolean result = st.registerStudent(
+        "Daniyal",
+        "Male",
+        "06-11-2007",
+        1,                  // class id from database
+        email,
+        "Daniyal123"
+        );
+
+    if (result) {
+        System.out.println("Student Data Saved Successfully!");
+    } else {
+        System.out.println("Student Registration Failed!");
+        return;  
+        // Register nahi hua to aage testing nahi chalegi
+    }
+
+
+    // 2. getAllStudents
+    System.out.println("\n===== 2. getAllStudents =====");
+
+    List<Student> list = st.getAllStudents();
+
+    if (list.isEmpty()) {
+        System.out.println("No student found");
+        return;
+    }
+
+    for (Student s : list) {
+        s.displayStudent();
+        System.out.println("--------------------------");
+    }
+
+
+    // Ab jo naya student bana (list ka aakhri), uski Student ID le lo
+    int studentId = list.get(list.size() - 1).getStudentId();
+
+    System.out.println("Student ID: " + studentId);
+
+
+    // 3. getStudentById
+    System.out.println("\n===== 3. getStudentById =====");
+
+    Student s1 = st.getStudentById(studentId);
+
+    if (s1 != null) {
+        s1.displayStudent();
+    } else {
+        System.out.println("Student Not found");
+    }
+
+
+    // 3. getStudentById (galat ID to null aana chahiye)
+
+    Student notFound = st.getStudentById(523);
+
+    if (notFound == null) {
+        System.out.println("null on invalid ID ");
+        // Galat ID par null aaya (sahi hai)
+    }
+
     }
 }
