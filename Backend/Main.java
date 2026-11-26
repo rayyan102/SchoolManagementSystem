@@ -255,6 +255,25 @@ public class Main {
     //     System.out.println("null on invalid ID ");
     //     // Galat ID par null aaya (sahi hai)
     // }
+    // Yahan apne new registered student ki actual user id ayegi
+    // USERS table mein email se user_id check krna
+
+    System.out.println("\n===== 4. getStudentByUserId =====");
+
+    int userId = 1;   // actual user id jo db mein mojood hai
+
+    Student s2 = st.getStudentByUserId(userId);
+
+    if (s2 != null) {
+        s2.displayStudent();
+    } else {
+        System.out.println("No User found with this ID");
+    }
+
+
+    // Testing Complete
+    System.out.println("\n===== Student DAO Testing Completed =====");
+
 
     }
 }
