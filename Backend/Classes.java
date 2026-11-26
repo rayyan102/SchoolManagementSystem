@@ -1,3 +1,4 @@
+package Backend;
 public class Classes {
     // Private attributes 
     private int classId;
