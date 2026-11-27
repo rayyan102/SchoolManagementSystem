@@ -36,5 +36,47 @@ public class AdminDashboard {
 
         int choice = sc.nextInt();
 
+        switch (choice) {
+
+    case 1:
+        System.out.println("Add Student Selected");
+        break;
+
+    case 2:
+        System.out.println("Remove Student Selected");
+        break;
+
+    case 3:
+        System.out.println("View All Students Selected");
+        break;
+
+    case 4:
+        System.out.println("Add Teacher Selected");
+        break;
+
+    case 5:
+        System.out.println("Remove Teacher Selected");
+        break;
+
+    case 6:
+        System.out.println("View All Teachers Selected");
+        break;
+
+    case 7:
+        System.out.println("Manage Classes Selected");
+        break;
+
+    case 8:
+        System.out.println("Mark Teacher Attendance Selected");
+        break;
+
+    case 9:
+        System.out.println("Logging Out...");
+        break;
+
+    default:
+        System.out.println("Invalid Choice!");
+}
+
     }
 }
