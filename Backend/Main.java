@@ -26,10 +26,14 @@ public class Main {
 
                 if (admin != null) {
 
-                    System.out.println("\n===== ADMIN DASHBOARD =====");
-                    System.out.println("Admin ID: " + admin.getAdminId());
-                    System.out.println("Admin Name: " + admin.getFullName());
-                    System.out.println("User ID: " + admin.getUserId());
+                    AdminDashboard dashboard = new AdminDashboard(admin);
+
+                    dashboard.showDashboard();
+
+                    // System.out.println("\n===== ADMIN DASHBOARD =====");
+                    // System.out.println("Admin ID: " + admin.getAdminId());
+                    // System.out.println("Admin Name: " + admin.getFullName());
+                    // System.out.println("User ID: " + admin.getUserId());
 
                 } else {
                     System.out.println("Admin Details Not Found!");
@@ -42,6 +46,9 @@ public class Main {
         } else {
             System.out.println("Invalid Email or Password!");
         }
+
+
+      
 // classes.java testing code:
     // Classes c1 =new Classes(233,"seven vii",34332);
     // Classes c2 =new Classes(234,"six vi",344532);
@@ -161,22 +168,22 @@ public class Main {
         // }
 
         // Student TESTING
-        StudentDAO studentDAO = new StudentDAO();
-        boolean studentResult  = studentDAO.registerStudent(
-        "Bilal",
-        "Male",
-        "2010-05-16",
-        21,
-        "Bilal@test.com",
-        "Test4556"
-                                                            );
+        // StudentDAO studentDAO = new StudentDAO();
+        // boolean studentResult  = studentDAO.registerStudent(
+        // "Bilal",
+        // "Male",
+        // "2010-05-16",
+        // 21,
+        // "Bilal@test.com",
+        // "Test4556"
+        //                                                     );
 
-        if (studentResult ) {
-            System.out.println("Student Data Saved Successfully!");
-                            } 
-        else {
-            System.out.println("Student Registration Failed!");
-            }
+        // if (studentResult ) {
+        //     System.out.println("Student Data Saved Successfully!");
+        //                     } 
+        // else {
+        //     System.out.println("Student Registration Failed!");
+        //     }
 
         // Database Connection Testing
         Connection con = DataBaseConnection.getConnection();

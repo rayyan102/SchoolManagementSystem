@@ -32,51 +32,56 @@ public class AdminDashboard {
         System.out.println("8. Mark Teacher Attendance");
         System.out.println("9. Logout");
 
-        System.out.print("\nEnter your choice: ");
+        boolean running = true;
 
-        int choice = sc.nextInt();
+        while (running) {
 
-        switch (choice) {
+          System.out.print("Enter your choice: ");
 
-    case 1:
-        System.out.println("Add Student Selected");
-        break;
+          int choice = sc.nextInt();
 
-    case 2:
-        System.out.println("Remove Student Selected");
-        break;
+          switch (choice) {
 
-    case 3:
-        System.out.println("View All Students Selected");
-        break;
+            case 1:
+              System.out.println("Add Student Selected");
+              break;
 
-    case 4:
-        System.out.println("Add Teacher Selected");
-        break;
+            case 2:
+              System.out.println("Remove Student Selected");
+              break;
 
-    case 5:
-        System.out.println("Remove Teacher Selected");
-        break;
+            case 3:
+              System.out.println("View All Students Selected");
+              break;
 
-    case 6:
-        System.out.println("View All Teachers Selected");
-        break;
+            case 4:
+              System.out.println("Add Teacher Selected");
+              break;
 
-    case 7:
-        System.out.println("Manage Classes Selected");
-        break;
+            case 5:
+              System.out.println("Remove Teacher Selected");
+              break;
 
-    case 8:
-        System.out.println("Mark Teacher Attendance Selected");
-        break;
+            case 6:
+              System.out.println("View All Teachers Selected");
+              break;
 
-    case 9:
-        System.out.println("Logging Out...");
-        break;
+            case 7:
+              System.out.println("Manage Classes Selected");
+              break;
 
-    default:
-        System.out.println("Invalid Choice!");
+            case 8:
+              System.out.println("Mark Teacher Attendance Selected");
+              break;
+
+            case 9:
+              running = false;
+              System.out.println("Logging Out...");
+              break;
+
+            default:
+              System.out.println("Invalid Choice!");
 }
-
+        }
     }
 }
