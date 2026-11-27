@@ -42,7 +42,14 @@ public class Main {
         } else {
             System.out.println("Invalid Email or Password!");
         }
-
+// classes.java testing code:
+    // Classes c1 =new Classes(233,"seven vii",34332);
+    // Classes c2 =new Classes(234,"six vi",344532);
+    // Classes c3 =new Classes(234,"five v",343112);
+    // c1.display();
+    // c2.display();
+    // c3.display();
+        
 // teacherdao all methods testing:
         // TeacherDao dao = new TeacherDao();
 
